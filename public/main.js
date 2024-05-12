@@ -4,7 +4,7 @@ const textStatus = document.getElementById('textStatus')
 const app = document.getElementById('app')
 
 //Start video
-startVideo = () => {
+const startVideo = () => {
 	// Older browsers might not implement mediaDevices at all, so we set an empty object first
 	if (navigator.mediaDevices === undefined) {
 		navigator.mediaDevices = {}
