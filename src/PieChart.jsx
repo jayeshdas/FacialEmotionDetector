@@ -31,10 +31,10 @@ const PieChart = ({ finalData }) => {
     tooltip: {
       trigger: "item",
     },
-    legend: {
-      top: "5%",
-      left: "center",
-    },
+    // legend: {
+    //   top: "5%",
+    //   left: "center",
+    // },
     series: [
       {
         name: "Access From",
@@ -42,8 +42,8 @@ const PieChart = ({ finalData }) => {
         radius: ["40%", "70%"],
         avoidLabelOverlap: false,
         label: {
-          show: false,
-          position: "center",
+          show: true,
+          position: "outside",
         },
         emphasis: {
           label: {

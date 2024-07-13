@@ -3,24 +3,36 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .a-card {
-  flex: 1;
-  border-radius: 10px;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  /* cursor: pointer; */
+  line-height: 1;
+  list-style: none;
+  padding: 0 1rems;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+  width: calc(50% - 50px);
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease;
-}
-
-.a-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  flex-grow: 1;
+  max-height: 200px;
 }
 
 .most-frequent-expression {
@@ -29,6 +41,9 @@
 
 .total-data-points {
   background-color: #3b5998;
+  >.a-value{
+    font-size: 7rem;
+  }
 }
 
 .average-probability {
@@ -54,12 +69,14 @@
   margin-top: 10px;
   text-align: center;
   font-weight: 600;
+  height: max-content;
 }
 
 .a-value {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .counts {
@@ -72,14 +89,21 @@
 .expression-count {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 8px 12px;
   border-radius: 8px;
-  background-color: #e0e0e0;
+  gap: 0.5rem;
+
+  /* background-color: #e0e0e0; */
+}
+
+.emoji{
+  font-size: 5rem;
 }
 
 .expression-count .emoji {
-  margin-right: 5px;
-  font-size: 24px;
+  font-size: 3rem;
 }
 
 .expression-count .count {

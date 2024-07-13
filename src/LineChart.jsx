@@ -76,6 +76,7 @@ const LineChart = ({ finalData }) => {
       {
         type: "inside",
         xAxisIndex: [0],
+        maxSpan: 50,
       },
       {
         type: "slider",
@@ -83,6 +84,7 @@ const LineChart = ({ finalData }) => {
         start: 0,
         end: 100,
         maxValueSpan: 10,
+        maxSpan: 50,
       },
     ],
   };

@@ -54,14 +54,14 @@ const AnalyticsUI = ({ facialExpressionData }) => {
     <div className="a-ui">
       <div className="a-card total-data-points">
         <div className="a-value">{analyticsData.totalDataPoints}</div>
-        <div className="a-title">Total Data Points</div>
+        <div className="a-title">Total Snapshot Collected</div>
       </div>
-      <div className="a-card average-probability">
+      {/* <div className="a-card average-probability">
         <div className="a-value">
           {(analyticsData.averageProbability * 100).toFixed(2)}%
         </div>
         <div className="a-title">Average Probability</div>
-      </div>
+      </div> */}
       <div
         className="a-card most-frequent-expression"
         style={{
@@ -76,14 +76,15 @@ const AnalyticsUI = ({ facialExpressionData }) => {
         <div className="a-title">Most Frequent Expression</div>
       </div>
       <div className="a-card expression-counts">
-        <div className="a-title">Expression Counts</div>
+        <div className="a-title">Expression Summary</div>
         <div className="counts">
           {Object.keys(analyticsData.expressionCounts).map((expression) => (
-            <div key={expression} className="expression-count">
-              <span className="emoji">{statusData[expression]?.emoji}</span>
-              <span className="count">
-                {analyticsData.expressionCounts[expression]}
-              </span>
+            <div key={expression} className="expression-count" title={expression}>
+                <span className="emoji">{statusData[expression]?.emoji}</span>
+                <span style={{textTransform:"capitalize"}}>{expression}</span>
+                <span className="count">
+                  {analyticsData.expressionCounts[expression]}
+                </span>
             </div>
           ))}
         </div>
