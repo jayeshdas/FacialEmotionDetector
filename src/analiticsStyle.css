@@ -10,11 +10,21 @@
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.a-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.most-frequent-expression {
+  text-align: center;
 }
 
 .total-data-points {
@@ -27,35 +37,59 @@
 
 .most-frequent-expression {
   text-align: center;
+  background-color: #f08080;
 }
 
 .expression-counts {
   background-color: #ff5722;
 }
 
+.expression-counts {
+  background-color: #ff5722;
+}
+
+
 .a-title {
   font-size: 18px;
   margin-top: 10px;
   text-align: center;
+  font-weight: 600;
 }
 
 .a-value {
   font-size: 36px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .counts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
 }
 
 .expression-count {
   display: flex;
   align-items: center;
-  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
 }
 
 .expression-count .emoji {
   margin-right: 5px;
+  font-size: 24px;
+}
+
+.expression-count .count {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.loading {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-top: 200px;
 }

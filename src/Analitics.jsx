@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import './analiticsStyle.css';
-import { statusData } from './data';
+import React, { useEffect, useState } from "react";
+import "./analiticsStyle.css";
+import { statusData } from "./data";
 
 const AnalyticsUI = ({ facialExpressionData }) => {
   // State to store analytics data
@@ -13,7 +13,9 @@ const AnalyticsUI = ({ facialExpressionData }) => {
 
     // Count occurrences of each expression and calculate total probability
     facialExpressionData.forEach(({ expression, probability }) => {
-      expressionCounts[expression] = expressionCounts[expression] ? expressionCounts[expression] + 1 : 1;
+      expressionCounts[expression] = expressionCounts[expression]
+        ? expressionCounts[expression] + 1
+        : 1;
       totalProbability += probability;
     });
 
@@ -23,7 +25,7 @@ const AnalyticsUI = ({ facialExpressionData }) => {
     // Find the most frequent expression
     let mostFrequentExpression = null;
     let maxCount = 0;
-    Object.keys(expressionCounts).forEach(expression => {
+    Object.keys(expressionCounts).forEach((expression) => {
       if (expressionCounts[expression] > maxCount) {
         mostFrequentExpression = expression;
         maxCount = expressionCounts[expression];
@@ -55,27 +57,39 @@ const AnalyticsUI = ({ facialExpressionData }) => {
         <div className="a-title">Total Data Points</div>
       </div>
       <div className="a-card average-probability">
-        <div className="a-value">{(analyticsData.averageProbability * 100).toFixed(2)}%</div>
+        <div className="a-value">
+          {(analyticsData.averageProbability * 100).toFixed(2)}%
+        </div>
         <div className="a-title">Average Probability</div>
       </div>
-      <div className="a-card most-frequent-expression" style={{ backgroundColor: statusData[analyticsData.mostFrequentExpression]?.color }}>
-        <div className="emoji">{statusData[analyticsData.mostFrequentExpression]?.emoji}</div>
+      <div
+        className="a-card most-frequent-expression"
+        style={{
+          backgroundColor:
+            statusData[analyticsData.mostFrequentExpression]?.color,
+        }}
+      >
+        <div className="emoji">
+          {statusData[analyticsData.mostFrequentExpression]?.emoji}
+        </div>
         <div className="a-value">{analyticsData.mostFrequentExpression}</div>
         <div className="a-title">Most Frequent Expression</div>
       </div>
       <div className="a-card expression-counts">
         <div className="a-title">Expression Counts</div>
         <div className="counts">
-          {Object.keys(analyticsData.expressionCounts).map(expression => (
+          {Object.keys(analyticsData.expressionCounts).map((expression) => (
             <div key={expression} className="expression-count">
               <span className="emoji">{statusData[expression]?.emoji}</span>
-              <span className="count">{analyticsData.expressionCounts[expression]}</span> 
+              <span className="count">
+                {analyticsData.expressionCounts[expression]}
+              </span>
             </div>
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default AnalyticsUI;
